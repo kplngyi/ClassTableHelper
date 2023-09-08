@@ -183,7 +183,7 @@ for row in sheet0.iter_rows(min_row=2):  # 第一行 是标题，从第二行开
             cell = row[col - 1]
             cell_value = cell.value
             course_info = course_info + str(flipped_course_info[col]) + ":" + cell_value + '\n'
-            if col == 3:
+            if col == 3 :
                 classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value + '\n'
             elif col == 4:
                 classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value + '\n'
