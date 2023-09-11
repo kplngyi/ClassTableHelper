@@ -3,6 +3,7 @@ import re
 from openpyxl.styles import PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 # 课表地址
+# 教务网站导出课表，需要取消合并
 filename = '/Users/dy/Desktop/选课表带时间.xlsx'
 # 打开Excel文件
 workbook = openpyxl.load_workbook(filename)
