@@ -114,7 +114,7 @@ interest_color = get_color(sheet0)
 
 # 打算获取 课程名称、课程属性、课时/学时、开课周、星期节次、教室、考核方式 7种信息
 # columns_to_read = [4, 6, 8, 11, 12, 13, 15]
-columns_to_read = [2, 3, 4, 8, 11, 12]
+columns_to_read = [4, 8, 11, 12, 13, 18]
 course_info = {
     "序号": 1,
     "开课院系": 2,
@@ -184,9 +184,13 @@ for row in sheet0.iter_rows(min_row=2):  # 第一行 是标题，从第二行开
             cell_value = cell.value
             course_info = course_info + str(flipped_course_info[col]) + ":" + cell_value + '\n'
             if col == 3 :
-                classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value + '\n'
+                #classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value +
+                classInfo = classInfo + cell_value + '\n'
+
             elif col == 4:
-                classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value + '\n'
+                #classInfo = classInfo + str(flipped_course_info[col]) + ":" + cell_value + '\n'
+                classInfo = classInfo + cell_value + '\n'
+
             # course_info = course_info + cell_value + "\n"
         print(course_info)
         for row_index in range(write_start_row, write_end_row + 1):
@@ -209,7 +213,7 @@ for cell_row in classTable_sheet.iter_rows():
         cell.alignment = alignment
 
 # 设置所有行和全部列的长和宽
-width = 120
+width = 150
 height = 360
 for i in range(1, classTable_sheet.max_row + 1):
     classTable_sheet.row_dimensions[i].height = height
